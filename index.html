@@ -9,15 +9,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0a0f1e;
-      --bg2: #0e1528;
-      --card: #111827;
-      --accent: #00e5c0;
-      --accent2: #3b82f6;
-      --accent3: #f59e0b;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --border: rgba(255,255,255,0.07);
+      --bg: #0a0008;
+      --bg2: #0f000d;
+      --card: #160014;
+      --accent: #c084fc;
+      --accent2: #a855f7;
+      --accent3: #e879f9;
+      --text: #faf5ff;
+      --muted: #c4b5d4;
+      --border: rgba(192,132,252,0.12);
     }
 
     html { scroll-behavior: smooth; }
@@ -103,7 +103,7 @@
       content: '';
       position: absolute;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,229,192,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(192,132,252,0.15) 0%, transparent 70%);
       top: -100px; right: -150px;
       border-radius: 50%;
       pointer-events: none;
@@ -112,7 +112,7 @@
       content: '';
       position: absolute;
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%);
       bottom: 0; left: 10%;
       border-radius: 50%;
       pointer-events: none;
@@ -122,8 +122,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0,229,192,0.1);
-      border: 1px solid rgba(0,229,192,0.3);
+      background: rgba(192,132,252,0.12);
+      border: 1px solid rgba(192,132,252,0.35);
       color: var(--accent);
       padding: 0.35rem 1rem;
       border-radius: 100px;
@@ -168,16 +168,16 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #0a0f1e;
+      color: #0a0008;
       font-weight: 700;
       font-size: 1rem;
       padding: 0.85rem 2rem;
       border-radius: 8px;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(0,229,192,0.25);
+      box-shadow: 0 0 30px rgba(192,132,252,0.3);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(0,229,192,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(192,132,252,0.5); }
 
     .btn-secondary {
       background: transparent;
@@ -301,7 +301,7 @@
       opacity: 0;
       transition: opacity 0.25s;
     }
-    .sistema-card:hover { transform: translateY(-4px); border-color: rgba(0,229,192,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .sistema-card:hover { transform: translateY(-4px); border-color: rgba(192,132,252,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
     .sistema-card:hover::before { opacity: 1; }
 
     .card-icon { font-size: 2rem; margin-bottom: 1.2rem; }
@@ -330,9 +330,9 @@
 
     .badge-lgpd {
       display: inline-block;
-      background: rgba(245,158,11,0.15);
+      background: rgba(192,132,252,0.15);
       color: var(--accent3);
-      border: 1px solid rgba(245,158,11,0.3);
+      border: 1px solid rgba(192,132,252,0.3);
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -422,7 +422,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(0,229,192,0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(192,132,252,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -431,9 +431,9 @@
       margin: 0 auto;
       padding: 4rem;
       background: var(--card);
-      border: 1px solid rgba(0,229,192,0.2);
+      border: 1px solid rgba(192,132,252,0.25);
       border-radius: 20px;
-      box-shadow: 0 0 80px rgba(0,229,192,0.08);
+      box-shadow: 0 0 80px rgba(192,132,252,0.1);
     }
     .cta-box h2 {
       font-family: 'Syne', sans-serif;
@@ -451,16 +451,16 @@
       align-items: center;
       gap: 0.6rem;
       background: var(--accent);
-      color: #0a0f1e;
+      color: #0a0008;
       font-weight: 700;
       font-size: 1rem;
       padding: 0.9rem 2.2rem;
       border-radius: 8px;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(0,229,192,0.25);
+      box-shadow: 0 0 30px rgba(192,132,252,0.3);
     }
-    .email-link:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(0,229,192,0.4); }
+    .email-link:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(192,132,252,0.5); }
 
     .cta-disclaimer { font-size: 0.8rem; color: var(--muted); margin-top: 1.2rem; }
 
@@ -503,7 +503,7 @@
     <a href="#sistemas">Sistemas</a>
     <a href="#como">Como funciona</a>
     <a href="#contato">Contato</a>
-    <a href="mailto:draritajeronimo.tech@gmail.com" class="nav-cta">Solicitar orçamento</a>
+    <a href="/cdn-cgi/l/email-protection#d1b5a3b0a3b8a5b0bbb4a3bebfb8bcbeffa5b4b2b991b6bcb0b8bdffb2bebc" class="nav-cta">Solicitar orçamento</a>
   </div>
 </nav>
 
@@ -515,7 +515,7 @@
     Desenvolvimento de sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, consultórios, salões, escritórios e muito mais.
   </p>
   <div class="hero-actions">
-    <a href="mailto:draritajeronimo.tech@gmail.com" class="btn-primary">📩 Quero meu sistema</a>
+    <a href="/cdn-cgi/l/email-protection#84e0f6e5f6edf0e5eee1f6ebeaede9ebaaf0e1e7ecc4e3e9e5ede8aae7ebe9" class="btn-primary">📩 Quero meu sistema</a>
     <a href="#sistemas" class="btn-secondary">Ver sistemas disponíveis</a>
   </div>
   <div class="hero-stats">
@@ -541,7 +541,7 @@
     <p>Sou Rita Jerônimo, Doutora em Ciência da Computação pela UFPE com experiência em modelagem computacional e desenvolvimento de sistemas.</p>
     <p>Criei a <strong>SysRita</strong> para levar tecnologia de qualidade para negócios de todos os tamanhos — com segurança, conformidade legal e suporte real, sem complicação.</p>
     <p style="margin-top: 1.5rem;">
-      <a href="mailto:draritajeronimo.tech@gmail.com" style="color: var(--accent); text-decoration: none; font-weight: 600;">Vamos conversar sobre o seu projeto →</a>
+      <a href="/cdn-cgi/l/email-protection#0d697f6c7f64796c67687f62636460622379686e654d6a606c6461236e6260" style="color: var(--accent); text-decoration: none; font-weight: 600;">Vamos conversar sobre o seu projeto →</a>
     </p>
   </div>
   <div class="credenciais">
@@ -667,7 +667,7 @@
         <li>Escalável com o crescimento</li>
       </ul>
       <div style="margin-top: 1.2rem;">
-        <a href="mailto:draritajeronimo.tech@gmail.com" style="color: var(--accent); font-size: 0.88rem; font-weight: 600; text-decoration: none;">Consultar disponibilidade →</a>
+        <a href="/cdn-cgi/l/email-protection#c5a1b7a4b7acb1a4afa0b7aaabaca8aaebb1a0a6ad85a2a8a4aca9eba6aaa8" style="color: var(--accent); font-size: 0.88rem; font-weight: 600; text-decoration: none;">Consultar disponibilidade →</a>
       </div>
     </div>
 
@@ -757,8 +757,8 @@
   <div class="cta-box">
     <h2>Pronto para ter <span>o sistema ideal</span> para o seu negócio?</h2>
     <p>Envie um e-mail contando sobre o seu negócio. A consulta inicial é gratuita e sem compromisso.</p>
-    <a href="mailto:draritajeronimo.tech@gmail.com" class="email-link">
-      📩 draritajeronimo.tech@gmail.com
+    <a href="/cdn-cgi/l/email-protection#bcd8ceddced5c8ddd6d9ced3d2d5d1d392c8d9dfd4fcdbd1ddd5d092dfd3d1" class="email-link">
+      📩 <span class="__cf_email__" data-cfemail="d9bdabb8abb0adb8b3bcabb6b7b0b4b6f7adbcbab199beb4b8b0b5f7bab6b4">[email&#160;protected]</span>
     </a>
     <div class="cta-disclaimer">Resposta em até 24 horas • Consulta inicial gratuita</div>
   </div>
@@ -767,13 +767,4 @@
 <!-- FOOTER -->
 <footer>
   <p><strong>SysRita</strong> – Sistemas Personalizados</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="mailto:draritajeronimo.tech@gmail.com">draritajeronimo.tech@gmail.com</a>
-    &nbsp;·&nbsp;
-    <a href="https://instagram.com/draritajeronimo.tech" target="_blank">@draritajeronimo.tech</a>
-  </p>
-  <p style="margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.5;">© 2025 SysRita. Todos os direitos reservados.</p>
-</footer>
-
-</body>
-</html>
+  <p style="margin-top
