@@ -33,6 +33,13 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .card-i{font-size:1.4rem;flex-shrink:0}
 .card-t{font-weight:600;font-size:0.93rem;margin-bottom:0.15rem}
 .card-d{font-size:0.82rem;color:#c4b5d4}
+.areas{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
+.areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
+.area-card{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.8rem 1.5rem;text-align:center;transition:transform .2s,border-color .2s}
+.area-card:hover{transform:translateY(-3px);border-color:rgba(192,132,252,0.3)}
+.area-i{font-size:2rem;margin-bottom:0.8rem}
+.area-t{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.4rem}
+.area-d{color:#c4b5d4;font-size:0.82rem}
 .ofertas{padding:6rem 6%}
 .sec-tag{font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c084fc;margin-bottom:0.7rem}
 .sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.8rem}
@@ -135,6 +142,44 @@ footer a{color:#c4b5d4;text-decoration:none}
   </div>
 </section>
 
+<section class="areas">
+  <div class="sec-tag">Segmentos</div>
+  <div class="sec-title">Para quem desenvolvo</div>
+  <div class="sec-sub">Atendo negócios de diferentes áreas com soluções adaptadas a cada realidade.</div>
+  <div class="areas-grid">
+    <div class="area-card">
+      <div class="area-i">🏥</div>
+      <div class="area-t">Clínicas Geral</div>
+      <div class="area-d">Qualquer especialidade de saúde</div>
+    </div>
+    <div class="area-card">
+      <div class="area-i">✂️</div>
+      <div class="area-t">Salões de Beleza</div>
+      <div class="area-d">Beleza, estética e barbearias</div>
+    </div>
+    <div class="area-card">
+      <div class="area-i">⚖️</div>
+      <div class="area-t">Escritórios</div>
+      <div class="area-d">Advocacia, contabilidade e consultorias</div>
+    </div>
+    <div class="area-card">
+      <div class="area-i">🏋️</div>
+      <div class="area-t">Academias</div>
+      <div class="area-d">Academias e espaços esportivos</div>
+    </div>
+    <div class="area-card">
+      <div class="area-i">🛍️</div>
+      <div class="area-t">Comércio</div>
+      <div class="area-d">Pequenos e médios negócios</div>
+    </div>
+    <div class="area-card">
+      <div class="area-i">✨</div>
+      <div class="area-t">Outros Segmentos</div>
+      <div class="area-d">Não encontrou? Entre em contato!</div>
+    </div>
+  </div>
+</section>
+
 <section class="ofertas">
   <div class="sec-tag">Soluções</div>
   <div class="sec-title">O que posso desenvolver para você</div>
@@ -212,7 +257,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     &nbsp;·&nbsp;
     <a href="https://instagram.com/draritajeronimo.tech" target="_blank">@draritajeronimo.tech</a>
   </p>
-  <p style="margin-top:0.6rem;opacity:0.4;font-size:0.75rem">© 2026 SysRita. Todos os direitos reservados.</p>
+  <p style="margin-top:0.6rem;opacity:0.4;font-size:0.75rem">© 2025 SysRita. Todos os direitos reservados.</p>
 </footer>
 
 </body>
