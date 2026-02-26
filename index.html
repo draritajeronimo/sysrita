@@ -1,445 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SysRita – Sistemas Personalizados</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0a0008;
-      --bg2: #0f000d;
-      --card: #160014;
-      --accent: #c084fc;
-      --accent2: #a855f7;
-      --accent3: #e879f9;
-      --text: #faf5ff;
-      --muted: #c4b5d4;
-      --border: rgba(192,132,252,0.12);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    section, nav, footer { position: relative; z-index: 1; }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 5%;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,0,8,0.88);
-    }
-    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
-    .logo span { color: var(--accent); }
-    .nav-cta {
-      background: var(--accent);
-      color: #0a0008;
-      padding: 0.5rem 1.4rem;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; }
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 6rem 5% 4rem;
-      position: relative;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(192,132,252,0.13) 0%, transparent 70%);
-      top: -150px; right: -200px;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 450px; height: 450px;
-      background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);
-      bottom: 0; left: 5%;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(192,132,252,0.12);
-      border: 1px solid rgba(192,132,252,0.35);
-      color: var(--accent);
-      padding: 0.35rem 1rem;
-      border-radius: 100px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 1.8rem;
-      animation: fadeUp 0.6s ease both;
-    }
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      max-width: 780px;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.7s 0.1s ease both;
-    }
-    h1 em { font-style: normal; color: var(--accent); }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      animation: fadeUp 0.7s 0.2s ease both;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: #0a0008;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(192,132,252,0.3);
-      animation: fadeUp 0.7s 0.3s ease both;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(192,132,252,0.5); }
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
-      animation: fadeUp 0.7s 0.4s ease both;
-    }
-    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
-    .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.1rem; }
-    .sobre {
-      background: var(--bg2);
-      padding: 6rem 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .sobre-text h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1.2rem;
-      line-height: 1.2;
-    }
-    .sobre-text h2 span { color: var(--accent); }
-    .sobre-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
-    .sobre-link { color: var(--accent); text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; }
-    .sobre-link:hover { text-decoration: underline; }
-    .credenciais { display: flex; flex-direction: column; gap: 1rem; }
-    .cred-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.2rem 1.5rem;
-      background: var(--card);
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
-    }
-    .cred-item:hover { border-color: rgba(192,132,252,0.3); }
-    .cred-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
-    .cred-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .cred-desc { font-size: 0.83rem; color: var(--muted); }
-    .ofereço { padding: 6rem 5%; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
-    .section-header h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 0.8rem; }
-    .section-header p { color: var(--muted); max-width: 500px; margin: 0 auto; }
-    .ofereço-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .ofereço-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      transition: transform 0.25s, border-color 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .ofereço-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent3));
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-    .ofereço-card:hover { transform: translateY(-4px); border-color: rgba(192,132,252,0.25); }
-    .ofereço-card:hover::before { opacity: 1; }
-    .card-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; }
-    .card-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-    .como {
-      background: var(--bg2);
-      padding: 6rem 5%;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .step { text-align: center; padding: 2.5rem 1.5rem; background: var(--card); border-radius: 14px; border: 1px solid var(--border); }
-    .step-num {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #0a0008;
-      margin: 0 auto 1.2rem;
-    }
-    .step h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; }
-    .step p { color: var(--muted); font-size: 0.88rem; }
-    .cta-section { padding: 6rem 5%; text-align: center; position: relative; }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(192,132,252,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-box {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 4rem;
-      background: var(--card);
-      border: 1px solid rgba(192,132,252,0.25);
-      border-radius: 20px;
-      box-shadow: 0 0 80px rgba(192,132,252,0.08);
-    }
-    .cta-box h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
-    .cta-box h2 span { color: var(--accent); }
-    .cta-box p { color: var(--muted); margin-bottom: 2rem; }
-    .email-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--accent);
-      color: #0a0008;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(192,132,252,0.3);
-    }
-    .email-link:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(192,132,252,0.5); }
-    .cta-disclaimer { font-size: 0.8rem; color: var(--muted); margin-top: 1.2rem; }
-    footer { text-align: center; padding: 2.5rem 5%; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.82rem; }
-    footer strong { color: var(--accent); font-family: 'Syne', sans-serif; }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--text); }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 768px) {
-      .sobre { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-stats { gap: 2rem; }
-      .cta-box { padding: 2.5rem 1.5rem; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SysRita – Sistemas Personalizados</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08000a;color:#f5eeff;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 6%;background:rgba(8,0,10,0.9);border-bottom:1px solid rgba(192,132,252,0.15);position:sticky;top:0;z-index:99;backdrop-filter:blur(10px)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:#f5eeff}
+.logo span{color:#c084fc}
+.nav-btn{background:#c084fc;color:#08000a;font-weight:700;font-size:0.88rem;padding:0.5rem 1.3rem;border-radius:6px;text-decoration:none}
+.hero{padding:7rem 6% 5rem;max-width:900px}
+.tag{display:inline-block;background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.3);color:#c084fc;font-size:0.8rem;font-weight:600;letter-spacing:1px;padding:0.3rem 1rem;border-radius:100px;margin-bottom:2rem}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.1;letter-spacing:-1.5px;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:#c084fc}
+.hero p{font-size:1.1rem;color:#c4b5d4;max-width:580px;margin-bottom:2.5rem;font-weight:300}
+.btn{display:inline-block;background:#c084fc;color:#08000a;font-weight:700;padding:0.9rem 2rem;border-radius:8px;text-decoration:none;font-size:1rem;box-shadow:0 0 30px rgba(192,132,252,0.25)}
+.numeros{display:flex;gap:0;border-top:1px solid rgba(192,132,252,0.15);border-bottom:1px solid rgba(192,132,252,0.15)}
+.num{flex:1;padding:2.5rem 6%;border-right:1px solid rgba(192,132,252,0.15)}
+.num:last-child{border-right:none}
+.num-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#c084fc;display:block}
+.num-desc{font-size:0.85rem;color:#c4b5d4;margin-top:0.2rem}
+.sobre{padding:6rem 6%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;background:#0b000e;border-bottom:1px solid rgba(192,132,252,0.1)}
+.sobre h2{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:1.2rem;line-height:1.2}
+.sobre h2 span{color:#c084fc}
+.sobre p{color:#c4b5d4;margin-bottom:1rem;line-height:1.8}
+.sobre-link{color:#c084fc;font-weight:600;text-decoration:none;margin-top:0.5rem;display:inline-block}
+.cards{display:flex;flex-direction:column;gap:1rem}
+.card{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.4rem;background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:10px}
+.card-i{font-size:1.4rem;flex-shrink:0}
+.card-t{font-weight:600;font-size:0.93rem;margin-bottom:0.15rem}
+.card-d{font-size:0.82rem;color:#c4b5d4}
+.ofertas{padding:6rem 6%}
+.sec-tag{font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c084fc;margin-bottom:0.7rem}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.8rem}
+.sec-sub{color:#c4b5d4;max-width:500px;margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.item{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.8rem;transition:transform .2s,border-color .2s}
+.item:hover{transform:translateY(-3px);border-color:rgba(192,132,252,0.25)}
+.item-i{font-size:1.8rem;margin-bottom:0.9rem}
+.item-t{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem}
+.item-d{color:#c4b5d4;font-size:0.87rem;line-height:1.6}
+.como{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:850px;margin-top:3rem}
+.step{text-align:center;padding:2.5rem 1.5rem;background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px}
+.step-n{width:46px;height:46px;background:linear-gradient(135deg,#c084fc,#a855f7);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:#08000a;margin:0 auto 1.2rem;font-size:1rem}
+.step h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem}
+.step p{color:#c4b5d4;font-size:0.85rem}
+.cta{padding:7rem 6%;text-align:center}
+.cta-box{max-width:580px;margin:0 auto;padding:4rem 3rem;background:#130010;border:1px solid rgba(192,132,252,0.2);border-radius:18px;box-shadow:0 0 60px rgba(192,132,252,0.07)}
+.cta-box h2{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:1rem;line-height:1.2}
+.cta-box h2 span{color:#c084fc}
+.cta-box p{color:#c4b5d4;margin-bottom:2rem}
+.cta-email{display:inline-flex;align-items:center;gap:0.5rem;background:#c084fc;color:#08000a;font-weight:700;padding:0.9rem 2rem;border-radius:8px;text-decoration:none;font-size:0.95rem;box-shadow:0 0 25px rgba(192,132,252,0.3)}
+.cta-note{font-size:0.78rem;color:#c4b5d4;margin-top:1.2rem;opacity:0.8}
+footer{text-align:center;padding:2rem 6%;border-top:1px solid rgba(192,132,252,0.1);color:#c4b5d4;font-size:0.8rem}
+footer strong{color:#c084fc;font-family:'Syne',sans-serif}
+footer a{color:#c4b5d4;text-decoration:none}
+@media(max-width:768px){
+  .sobre{grid-template-columns:1fr;gap:2.5rem}
+  .numeros{flex-direction:column}
+  .num{border-right:none;border-bottom:1px solid rgba(192,132,252,0.15)}
+  .cta-box{padding:2.5rem 1.5rem}
+}
+</style>
 </head>
 <body>
 
 <nav>
   <div class="logo">Sys<span>Rita</span></div>
-  <a href="mailto:draritajeronimo.tech@gmail.com" class="nav-cta">Solicitar orçamento</a>
+  <a href="mailto:draritajeronimo.tech@gmail.com" class="nav-btn">Solicitar orçamento</a>
 </nav>
 
 <section class="hero">
-  <div class="badge">✦ Sistemas personalizados para o seu negócio</div>
+  <div class="tag">✦ Sistemas personalizados para o seu negócio</div>
   <h1>O sistema ideal para <em>o seu negócio</em>, feito sob medida.</h1>
-  <p class="hero-sub">Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, consultórios, salões, escritórios e muito mais.</p>
-  <a href="mailto:draritajeronimo.tech@gmail.com" class="btn-primary">📩 Entre em contato</a>
-  <div class="hero-stats">
-    <div>
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Personalizado<br>para o seu negócio</div>
-    </div>
-    <div>
-      <div class="stat-num">LGPD</div>
-      <div class="stat-label">Conformidade desde<br>o primeiro acesso</div>
-    </div>
-    <div>
-      <div class="stat-num">🔒</div>
-      <div class="stat-label">Backup automático<br>dos seus dados</div>
-    </div>
-  </div>
+  <p>Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, salões, escritórios e muito mais.</p>
+  <a href="mailto:draritajeronimo.tech@gmail.com" class="btn">📩 Entre em contato</a>
 </section>
+
+<div class="numeros">
+  <div class="num">
+    <span class="num-val">100%</span>
+    <div class="num-desc">Personalizado para o seu negócio</div>
+  </div>
+  <div class="num">
+    <span class="num-val">LGPD</span>
+    <div class="num-desc">Conformidade desde o primeiro acesso</div>
+  </div>
+  <div class="num">
+    <span class="num-val">🔒</span>
+    <div class="num-desc">Backup automático dos seus dados</div>
+  </div>
+</div>
 
 <section class="sobre">
-  <div class="sobre-text">
+  <div>
     <h2>Tecnologia séria,<br><span>atendimento humano.</span></h2>
     <p>Sou Rita Jerônimo, Doutora em Ciência da Computação pela UFPE com experiência em modelagem computacional e desenvolvimento de sistemas.</p>
-    <p>Criei a <strong>SysRita</strong> para levar tecnologia de qualidade para negócios de todos os tamanhos — com segurança, conformidade legal e suporte real, sem complicação.</p>
+    <p>Criei a SysRita para levar tecnologia de qualidade a negócios de todos os tamanhos — com segurança, conformidade legal e suporte real.</p>
     <a href="mailto:draritajeronimo.tech@gmail.com" class="sobre-link">Vamos conversar sobre o seu projeto →</a>
   </div>
-  <div class="credenciais">
-    <div class="cred-item">
-      <div class="cred-icon">🎓</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-i">🎓</div>
       <div>
-        <div class="cred-title">Doutora em Ciência da Computação</div>
-        <div class="cred-desc">UFPE – Universidade Federal de Pernambuco</div>
+        <div class="card-t">Doutora em Ciência da Computação</div>
+        <div class="card-d">UFPE – Universidade Federal de Pernambuco</div>
       </div>
     </div>
-    <div class="cred-item">
-      <div class="cred-icon">🛡️</div>
+    <div class="card">
+      <div class="card-i">🛡️</div>
       <div>
-        <div class="cred-title">Desenvolvimento com LGPD</div>
-        <div class="cred-desc">Seus dados e os dos seus clientes protegidos por lei</div>
+        <div class="card-t">Desenvolvimento com LGPD</div>
+        <div class="card-d">Dados dos seus clientes protegidos por lei</div>
       </div>
     </div>
-    <div class="cred-item">
-      <div class="cred-icon">💾</div>
+    <div class="card">
+      <div class="card-i">💾</div>
       <div>
-        <div class="cred-title">Backup automático</div>
-        <div class="cred-desc">Seus dados sempre seguros e disponíveis</div>
+        <div class="card-t">Backup automático</div>
+        <div class="card-d">Seus dados sempre seguros e disponíveis</div>
       </div>
     </div>
-    <div class="cred-item">
-      <div class="cred-icon">🤝</div>
+    <div class="card">
+      <div class="card-i">🤝</div>
       <div>
-        <div class="cred-title">Suporte próximo e contínuo</div>
-        <div class="cred-desc">Atendimento direto, sem intermediários</div>
+        <div class="card-t">Suporte próximo e contínuo</div>
+        <div class="card-d">Atendimento direto, sem intermediários</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ofereço">
-  <div class="section-header">
-    <div class="section-tag">Soluções</div>
-    <h2>O que posso desenvolver para você</h2>
-    <p>Cada sistema é construído do zero, pensado para a realidade do seu negócio.</p>
-  </div>
-  <div class="ofereço-grid">
-    <div class="ofereço-card">
-      <div class="card-icon">👥</div>
-      <div class="card-title">Cadastro de Clientes</div>
-      <div class="card-desc">Sistema completo para registrar, organizar e consultar informações dos seus clientes com segurança e agilidade.</div>
+<section class="ofertas">
+  <div class="sec-tag">Soluções</div>
+  <div class="sec-title">O que posso desenvolver para você</div>
+  <div class="sec-sub">Cada sistema é construído do zero, pensado para a realidade do seu negócio.</div>
+  <div class="grid">
+    <div class="item">
+      <div class="item-i">👥</div>
+      <div class="item-t">Cadastro de Clientes</div>
+      <div class="item-d">Registre, organize e consulte informações dos seus clientes com segurança e agilidade.</div>
     </div>
-    <div class="ofereço-card">
-      <div class="card-icon">📅</div>
-      <div class="card-title">Agendamentos</div>
-      <div class="card-desc">Gerencie sua agenda de forma simples, evite conflitos de horários e mantenha tudo organizado em um só lugar.</div>
+    <div class="item">
+      <div class="item-i">📅</div>
+      <div class="item-t">Agendamentos</div>
+      <div class="item-d">Gerencie sua agenda, evite conflitos de horários e mantenha tudo em um só lugar.</div>
     </div>
-    <div class="ofereço-card">
-      <div class="card-icon">📋</div>
-      <div class="card-title">Prontuários e Registros</div>
-      <div class="card-desc">Histórico completo de atendimentos, fichas personalizadas e acesso rápido a todas as informações do cliente.</div>
+    <div class="item">
+      <div class="item-i">📋</div>
+      <div class="item-t">Prontuários e Registros</div>
+      <div class="item-d">Histórico completo de atendimentos e fichas personalizadas para cada cliente.</div>
     </div>
-    <div class="ofereço-card">
-      <div class="card-icon">📊</div>
-      <div class="card-title">Relatórios e Controle</div>
-      <div class="card-desc">Visualize o desempenho do seu negócio com relatórios claros sobre atendimentos, finanças e histórico.</div>
+    <div class="item">
+      <div class="item-i">📊</div>
+      <div class="item-t">Relatórios e Controle</div>
+      <div class="item-d">Visualize o desempenho do seu negócio com relatórios claros e objetivos.</div>
     </div>
-    <div class="ofereço-card">
-      <div class="card-icon">💰</div>
-      <div class="card-title">Controle Financeiro</div>
-      <div class="card-desc">Acompanhe pagamentos, mensalidades e receitas de forma simples e organizada.</div>
+    <div class="item">
+      <div class="item-i">💰</div>
+      <div class="item-t">Controle Financeiro</div>
+      <div class="item-d">Acompanhe pagamentos, mensalidades e receitas de forma simples e organizada.</div>
     </div>
-    <div class="ofereço-card" style="border-color: rgba(192,132,252,0.2);">
-      <div class="card-icon">✨</div>
-      <div class="card-title">Funcionalidade Personalizada</div>
-      <div class="card-desc">Tem uma necessidade específica? Desenvolvemos exatamente o que o seu negócio precisa, do seu jeito.</div>
+    <div class="item" style="border-color:rgba(192,132,252,0.22)">
+      <div class="item-i">✨</div>
+      <div class="item-t">Funcionalidade Personalizada</div>
+      <div class="item-d">Tem uma necessidade específica? Desenvolvemos exatamente o que o seu negócio precisa.</div>
     </div>
   </div>
 </section>
 
 <section class="como">
-  <div class="section-header">
-    <div class="section-tag">Processo</div>
-    <h2>Como funciona?</h2>
-    <p>Simples, transparente e sem complicação.</p>
-  </div>
+  <div class="sec-tag">Processo</div>
+  <div class="sec-title">Como funciona?</div>
+  <div class="sec-sub">Simples, transparente e sem complicação.</div>
   <div class="steps">
     <div class="step">
-      <div class="step-num">1</div>
+      <div class="step-n">1</div>
       <h3>Entre em contato</h3>
-      <p>Envie um e-mail contando sobre o seu negócio e o que você precisa. Respondo em até 24h.</p>
+      <p>Envie um e-mail contando sobre seu negócio. Respondo em até 24h.</p>
     </div>
     <div class="step">
-      <div class="step-num">2</div>
+      <div class="step-n">2</div>
       <h3>Receba uma proposta</h3>
-      <p>Após entender suas necessidades, envio uma proposta clara com escopo, prazo e investimento.</p>
+      <p>Envio uma proposta clara com escopo, prazo e investimento.</p>
     </div>
     <div class="step">
-      <div class="step-num">3</div>
+      <div class="step-n">3</div>
       <h3>Seu sistema pronto</h3>
-      <p>Desenvolvimento ágil com acompanhamento próximo. Você recebe treinamento e suporte na entrega.</p>
+      <p>Você recebe o sistema com treinamento e suporte na entrega.</p>
     </div>
   </div>
 </section>
 
-<section class="cta-section" id="contato">
+<section class="cta">
   <div class="cta-box">
     <h2>Pronto para ter o sistema <span>ideal</span> para o seu negócio?</h2>
     <p>A consulta inicial é gratuita e sem compromisso. Me conta sobre o seu negócio e eu te apresento a melhor solução.</p>
-    <a href="mailto:draritajeronimo.tech@gmail.com" class="email-link">📩 draritajeronimo.tech@gmail.com</a>
-    <div class="cta-disclaimer">Resposta em até 24 horas &nbsp;·&nbsp; Consulta inicial gratuita</div>
+    <a href="mailto:draritajeronimo.tech@gmail.com" class="cta-email">📩 draritajeronimo.tech@gmail.com</a>
+    <div class="cta-note">Resposta em até 24 horas · Consulta inicial gratuita</div>
   </div>
 </section>
 
 <footer>
   <p><strong>SysRita</strong> – Sistemas Personalizados</p>
-  <p style="margin-top: 0.5rem;">
+  <p style="margin-top:0.4rem">
     <a href="mailto:draritajeronimo.tech@gmail.com">draritajeronimo.tech@gmail.com</a>
     &nbsp;·&nbsp;
     <a href="https://instagram.com/draritajeronimo.tech" target="_blank">@draritajeronimo.tech</a>
   </p>
-  <p style="margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.5;">© 2025 SysRita. Todos os direitos reservados.</p>
+  <p style="margin-top:0.6rem;opacity:0.4;font-size:0.75rem">© 2025 SysRita. Todos os direitos reservados.</p>
 </footer>
 
 </body>
