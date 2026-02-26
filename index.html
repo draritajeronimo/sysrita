@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #0a0008;
       --bg2: #0f000d;
@@ -19,9 +18,7 @@
       --muted: #c4b5d4;
       --border: rgba(192,132,252,0.12);
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -30,20 +27,7 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
     section, nav, footer { position: relative; z-index: 1; }
-
-    /* ── NAV ── */
     nav {
       display: flex;
       justify-content: space-between;
@@ -56,15 +40,8 @@
       z-index: 100;
       background: rgba(10,0,8,0.88);
     }
-
-    .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: -0.5px;
-    }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
     .logo span { color: var(--accent); }
-
     .nav-cta {
       background: var(--accent);
       color: #0a0008;
@@ -76,8 +53,6 @@
       transition: opacity 0.2s;
     }
     .nav-cta:hover { opacity: 0.85; }
-
-    /* ── HERO ── */
     .hero {
       min-height: 90vh;
       display: flex;
@@ -87,7 +62,6 @@
       padding: 6rem 5% 4rem;
       position: relative;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -106,7 +80,6 @@
       border-radius: 50%;
       pointer-events: none;
     }
-
     .badge {
       display: inline-flex;
       align-items: center;
@@ -122,7 +95,6 @@
       margin-bottom: 1.8rem;
       animation: fadeUp 0.6s ease both;
     }
-
     h1 {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
@@ -134,7 +106,6 @@
       animation: fadeUp 0.7s 0.1s ease both;
     }
     h1 em { font-style: normal; color: var(--accent); }
-
     .hero-sub {
       font-size: 1.1rem;
       color: var(--muted);
@@ -143,7 +114,6 @@
       font-weight: 300;
       animation: fadeUp 0.7s 0.2s ease both;
     }
-
     .btn-primary {
       display: inline-block;
       background: var(--accent);
@@ -158,7 +128,6 @@
       animation: fadeUp 0.7s 0.3s ease both;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(192,132,252,0.5); }
-
     .hero-stats {
       display: flex;
       gap: 3rem;
@@ -168,15 +137,8 @@
       flex-wrap: wrap;
       animation: fadeUp 0.7s 0.4s ease both;
     }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
     .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.1rem; }
-
-    /* ── SOBRE ── */
     .sobre {
       background: var(--bg2);
       padding: 6rem 5%;
@@ -187,7 +149,6 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
     .sobre-text h2 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
@@ -198,17 +159,9 @@
     }
     .sobre-text h2 span { color: var(--accent); }
     .sobre-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
-    .sobre-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 0.5rem;
-      display: inline-block;
-    }
+    .sobre-link { color: var(--accent); text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; }
     .sobre-link:hover { text-decoration: underline; }
-
     .credenciais { display: flex; flex-direction: column; gap: 1rem; }
-
     .cred-item {
       display: flex;
       align-items: flex-start;
@@ -223,33 +176,11 @@
     .cred-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
     .cred-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
     .cred-desc { font-size: 0.83rem; color: var(--muted); }
-
-    /* ── O QUE OFEREÇO ── */
-    .ofereço {
-      padding: 6rem 5%;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .section-tag {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-    .section-header h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 0.8rem;
-    }
+    .ofereço { padding: 6rem 5%; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .section-header h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 0.8rem; }
     .section-header p { color: var(--muted); max-width: 500px; margin: 0 auto; }
-
     .ofereço-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -257,7 +188,6 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-
     .ofereço-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -278,24 +208,15 @@
     }
     .ofereço-card:hover { transform: translateY(-4px); border-color: rgba(192,132,252,0.25); }
     .ofereço-card:hover::before { opacity: 1; }
-
     .card-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .card-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-    }
+    .card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; }
     .card-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-
-    /* ── COMO FUNCIONA ── */
     .como {
       background: var(--bg2);
       padding: 6rem 5%;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -303,14 +224,7 @@
       max-width: 900px;
       margin: 0 auto;
     }
-
-    .step {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: var(--card);
-      border-radius: 14px;
-      border: 1px solid var(--border);
-    }
+    .step { text-align: center; padding: 2.5rem 1.5rem; background: var(--card); border-radius: 14px; border: 1px solid var(--border); }
     .step-num {
       width: 48px; height: 48px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -326,13 +240,7 @@
     }
     .step h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; }
     .step p { color: var(--muted); font-size: 0.88rem; }
-
-    /* ── CTA ── */
-    .cta-section {
-      padding: 6rem 5%;
-      text-align: center;
-      position: relative;
-    }
+    .cta-section { padding: 6rem 5%; text-align: center; position: relative; }
     .cta-section::before {
       content: '';
       position: absolute;
@@ -340,7 +248,6 @@
       background: radial-gradient(ellipse at center, rgba(192,132,252,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .cta-box {
       max-width: 600px;
       margin: 0 auto;
@@ -350,17 +257,9 @@
       border-radius: 20px;
       box-shadow: 0 0 80px rgba(192,132,252,0.08);
     }
-    .cta-box h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.7rem, 3vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
+    .cta-box h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
     .cta-box h2 span { color: var(--accent); }
     .cta-box p { color: var(--muted); margin-bottom: 2rem; }
-
     .email-link {
       display: inline-flex;
       align-items: center;
@@ -377,26 +276,14 @@
     }
     .email-link:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(192,132,252,0.5); }
     .cta-disclaimer { font-size: 0.8rem; color: var(--muted); margin-top: 1.2rem; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 5%;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
+    footer { text-align: center; padding: 2.5rem 5%; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.82rem; }
     footer strong { color: var(--accent); font-family: 'Syne', sans-serif; }
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--text); }
-
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .sobre { grid-template-columns: 1fr; gap: 3rem; }
       .hero-stats { gap: 2rem; }
@@ -406,21 +293,16 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Sys<span>Rita</span></div>
   <a href="mailto:draritajeronimo.tech@gmail.com" class="nav-cta">Solicitar orçamento</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="badge">✦ Sistemas personalizados para o seu negócio</div>
   <h1>O sistema ideal para <em>o seu negócio</em>, feito sob medida.</h1>
-  <p class="hero-sub">
-    Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, consultórios, salões, escritórios e muito mais.
-  </p>
+  <p class="hero-sub">Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, consultórios, salões, escritórios e muito mais.</p>
   <a href="mailto:draritajeronimo.tech@gmail.com" class="btn-primary">📩 Entre em contato</a>
-
   <div class="hero-stats">
     <div>
       <div class="stat-num">100%</div>
@@ -437,7 +319,6 @@
   </div>
 </section>
 
-<!-- SOBRE -->
 <section class="sobre">
   <div class="sobre-text">
     <h2>Tecnologia séria,<br><span>atendimento humano.</span></h2>
@@ -477,7 +358,6 @@
   </div>
 </section>
 
-<!-- O QUE OFEREÇO -->
 <section class="ofereço">
   <div class="section-header">
     <div class="section-tag">Soluções</div>
@@ -518,7 +398,6 @@
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
 <section class="como">
   <div class="section-header">
     <div class="section-tag">Processo</div>
@@ -544,19 +423,15 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-section" id="contato">
   <div class="cta-box">
     <h2>Pronto para ter o sistema <span>ideal</span> para o seu negócio?</h2>
     <p>A consulta inicial é gratuita e sem compromisso. Me conta sobre o seu negócio e eu te apresento a melhor solução.</p>
-    <a href="mailto:draritajeronimo.tech@gmail.com" class="email-link">
-      📩 draritajeronimo.tech@gmail.com
-    </a>
+    <a href="mailto:draritajeronimo.tech@gmail.com" class="email-link">📩 draritajeronimo.tech@gmail.com</a>
     <div class="cta-disclaimer">Resposta em até 24 horas &nbsp;·&nbsp; Consulta inicial gratuita</div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p><strong>SysRita</strong> – Sistemas Personalizados</p>
   <p style="margin-top: 0.5rem;">
