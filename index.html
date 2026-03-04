@@ -24,11 +24,19 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .num-val{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;color:#c084fc;display:block}
 .num-desc{font-size:0.85rem;color:#c4b5d4;margin-top:0.2rem;font-weight:400}
 .sobre{padding:6rem 6%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;background:#0b000e;border-bottom:1px solid rgba(192,132,252,0.1)}
-.sobre h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:1.2rem;line-height:1.2}
-.sobre h2 span{color:#c084fc}
-.sobre p{color:#c4b5d4;margin-bottom:1rem;line-height:1.8;font-weight:400}
+.sobre-esq{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.foto-wrapper{position:relative;width:260px;height:260px;flex-shrink:0}
+.foto-wrapper img{width:260px;height:260px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid rgba(192,132,252,0.4);box-shadow:0 0 40px rgba(192,132,252,0.2)}
+.foto-wrapper::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px dashed rgba(192,132,252,0.2);animation:spin 20s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.foto-nome{text-align:center}
+.foto-nome strong{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:700;display:block}
+.foto-nome span{font-size:0.82rem;color:#c084fc;font-weight:500}
+.sobre-dir h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:1.2rem;line-height:1.2}
+.sobre-dir h2 span{color:#c084fc}
+.sobre-dir p{color:#c4b5d4;margin-bottom:1rem;line-height:1.8;font-weight:400}
 .sobre-link{color:#c084fc;font-weight:600;text-decoration:none;margin-top:0.5rem;display:inline-block}
-.cards{display:flex;flex-direction:column;gap:1rem}
+.cards{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
 .card{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.4rem;background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:10px}
 .card-i{font-size:1.4rem;flex-shrink:0}
 .card-t{font-weight:600;font-size:0.93rem;margin-bottom:0.15rem}
@@ -67,10 +75,12 @@ footer{text-align:center;padding:2rem 6%;border-top:1px solid rgba(192,132,252,0
 footer strong{color:#c084fc;font-family:'Bricolage Grotesque',sans-serif}
 footer a{color:#c4b5d4;text-decoration:none}
 @media(max-width:768px){
-  .sobre{grid-template-columns:1fr;gap:2.5rem}
+  .sobre{grid-template-columns:1fr;gap:3rem}
   .numeros{flex-direction:column}
   .num{border-right:none;border-bottom:1px solid rgba(192,132,252,0.15)}
   .cta-box{padding:2.5rem 1.5rem}
+  .foto-wrapper{width:200px;height:200px}
+  .foto-wrapper img{width:200px;height:200px}
 }
 </style>
 </head>
@@ -104,39 +114,41 @@ footer a{color:#c4b5d4;text-decoration:none}
 </div>
 
 <section class="sobre">
-  <div>
+  <div class="sobre-esq">
+    <div class="foto-wrapper">
+      <img src="rita.jpg" alt="Rita Jerônimo"/>
+    </div>
+    <div class="foto-nome">
+      <strong>Rita Jerônimo</strong>
+      <span>Dra. em Ciência da Computação · UFPE</span>
+    </div>
+  </div>
+  <div class="sobre-dir">
     <h2>Tecnologia séria,<br><span>atendimento humano.</span></h2>
     <p>Sou Rita Jerônimo, Doutora em Ciência da Computação pela UFPE com experiência em modelagem computacional e desenvolvimento de sistemas.</p>
     <p>Criei a SysRita para levar tecnologia de qualidade a negócios de todos os tamanhos — com segurança, conformidade legal e suporte real.</p>
     <a href="mailto:draritajeronimo.tech@gmail.com" class="sobre-link">Vamos conversar sobre o seu projeto →</a>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-i">🎓</div>
-      <div>
-        <div class="card-t">Doutora em Ciência da Computação</div>
-        <div class="card-d">UFPE – Universidade Federal de Pernambuco</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-i">🛡️</div>
+        <div>
+          <div class="card-t">Desenvolvimento com LGPD</div>
+          <div class="card-d">Dados dos seus clientes protegidos por lei</div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-i">🛡️</div>
-      <div>
-        <div class="card-t">Desenvolvimento com LGPD</div>
-        <div class="card-d">Dados dos seus clientes protegidos por lei</div>
+      <div class="card">
+        <div class="card-i">💾</div>
+        <div>
+          <div class="card-t">Backup automático</div>
+          <div class="card-d">Seus dados sempre seguros e disponíveis</div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-i">💾</div>
-      <div>
-        <div class="card-t">Backup automático</div>
-        <div class="card-d">Seus dados sempre seguros e disponíveis</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-i">🤝</div>
-      <div>
-        <div class="card-t">Suporte próximo e contínuo</div>
-        <div class="card-d">Atendimento direto, sem intermediários</div>
+      <div class="card">
+        <div class="card-i">🤝</div>
+        <div>
+          <div class="card-t">Suporte próximo e contínuo</div>
+          <div class="card-d">Atendimento direto, sem intermediários</div>
+        </div>
       </div>
     </div>
   </div>
