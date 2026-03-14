@@ -58,6 +58,38 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .item-i{font-size:1.8rem;margin-bottom:0.9rem}
 .item-t{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem}
 .item-d{color:#c4b5d4;font-size:0.87rem;line-height:1.6;font-weight:400}
+ 
+/* ── PORTFÓLIO ── */
+.portfolio{padding:6rem 6%;background:#08000a;border-top:1px solid rgba(192,132,252,0.1)}
+.portfolio-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1000px;margin-top:3rem}
+.portfolio-img-wrapper{position:relative}
+.portfolio-img-wrapper::before{
+  content:'';
+  position:absolute;
+  inset:-1px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(192,132,252,0.4),transparent 60%);
+  z-index:0;
+}
+.portfolio-img{
+  border-radius:12px;
+  border:1px solid rgba(192,132,252,0.2);
+  box-shadow:0 0 60px rgba(192,132,252,0.1);
+  width:100%;
+  display:block;
+  position:relative;
+  z-index:1;
+}
+.portfolio-texto h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:1rem;line-height:1.2}
+.portfolio-texto h2 span{color:#c084fc}
+.portfolio-texto p{color:#c4b5d4;font-weight:400;line-height:1.8;margin-bottom:0.8rem}
+.badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.2rem}
+.badge{background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.25);color:#c084fc;font-size:0.78rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px}
+@media(max-width:768px){
+  .portfolio-inner{grid-template-columns:1fr;gap:2rem}
+}
+/* ── FIM PORTFÓLIO ── */
+ 
 .como{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:850px;margin-top:3rem}
 .step{text-align:center;padding:2.5rem 1.5rem;background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px}
@@ -85,19 +117,19 @@ footer a{color:#c4b5d4;text-decoration:none}
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="logo">Sys<span>Rita</span></div>
   <a href="mailto:draritajeronimo.tech@gmail.com" class="nav-btn">Solicitar orçamento</a>
 </nav>
-
+ 
 <section class="hero">
   <div class="tag">✦ Sistemas personalizados para o seu negócio</div>
   <h1>O sistema ideal para <em>o seu negócio</em>, feito sob medida.</h1>
   <p>Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, salões, escritórios e muito mais.</p>
   <a href="mailto:draritajeronimo.tech@gmail.com" class="btn">📩 Entre em contato</a>
 </section>
-
+ 
 <div class="numeros">
   <div class="num">
     <span class="num-val">100%</span>
@@ -112,7 +144,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     <div class="num-desc">Backup automático dos seus dados</div>
   </div>
 </div>
-
+ 
 <section class="sobre">
   <div class="sobre-esq">
     <div class="foto-wrapper">
@@ -153,7 +185,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     </div>
   </div>
 </section>
-
+ 
 <section class="areas">
   <div class="sec-tag">Segmentos</div>
   <div class="sec-title">Para quem desenvolvo</div>
@@ -191,7 +223,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     </div>
   </div>
 </section>
-
+ 
 <section class="ofertas">
   <div class="sec-tag">Soluções</div>
   <div class="sec-title">O que posso desenvolver para você</div>
@@ -229,7 +261,35 @@ footer a{color:#c4b5d4;text-decoration:none}
     </div>
   </div>
 </section>
-
+ 
+<!-- ══════════════════════════════════════════
+     PORTFÓLIO — troque "prontuario.jpg" pelo
+     nome real do seu arquivo de print
+     ══════════════════════════════════════════ -->
+<section class="portfolio">
+  <div class="sec-tag">Portfólio</div>
+  <div class="sec-title">Sistema já entregue</div>
+  <div class="sec-sub">Um exemplo real de sistema desenvolvido e em uso.</div>
+  <div class="portfolio-inner">
+    <div class="portfolio-img-wrapper">
+      <img src="prontuario.jpg" alt="Prontuário Eletrônico Odontológico" class="portfolio-img"/>
+    </div>
+    <div class="portfolio-texto">
+      <h2>Prontuário Eletrônico <span>Odontológico</span></h2>
+      <p>Sistema completo desenvolvido para clínica odontológica, com cadastro de pacientes, fichas clínicas, odontograma interativo e controle de consultas.</p>
+      <p>Construído com segurança, backup automático e total conformidade com a LGPD.</p>
+      <div class="badge-row">
+        <span class="badge">LGPD</span>
+        <span class="badge">Odontograma</span>
+        <span class="badge">Backup automático</span>
+        <span class="badge">Controle de acesso</span>
+        <span class="badge">Relatórios PDF</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════ -->
+ 
 <section class="como">
   <div class="sec-tag">Processo</div>
   <div class="sec-title">Como funciona?</div>
@@ -252,7 +312,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     </div>
   </div>
 </section>
-
+ 
 <section class="cta">
   <div class="cta-box">
     <h2>Pronto para ter o sistema <span>ideal</span> para o seu negócio?</h2>
@@ -261,7 +321,7 @@ footer a{color:#c4b5d4;text-decoration:none}
     <div class="cta-note">Resposta em até 24 horas · Consulta inicial gratuita</div>
   </div>
 </section>
-
+ 
 <footer>
   <p><strong>SysRita</strong> – Sistemas Personalizados</p>
   <p style="margin-top:0.4rem">
@@ -271,6 +331,7 @@ footer a{color:#c4b5d4;text-decoration:none}
   </p>
   <p style="margin-top:0.6rem;opacity:0.4;font-size:0.75rem">© 2026 SysRita. Todos os direitos reservados.</p>
 </footer>
-
+ 
 </body>
 </html>
+ 
