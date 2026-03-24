@@ -23,6 +23,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .num:last-child{border-right:none}
 .num-val{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;color:#c084fc;display:block}
 .num-desc{font-size:0.85rem;color:#c4b5d4;margin-top:0.2rem;font-weight:400}
+.sec-tag{font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#c084fc;margin-bottom:0.7rem}
+.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.8rem}
+.sec-sub{color:#c4b5d4;max-width:560px;margin-bottom:3rem;font-weight:400}
 .sobre{padding:6rem 6%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;background:#0b000e;border-bottom:1px solid rgba(192,132,252,0.1)}
 .sobre-esq{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
 .foto-wrapper{position:relative;width:260px;height:260px;flex-shrink:0}
@@ -41,25 +44,46 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .card-i{font-size:1.4rem;flex-shrink:0}
 .card-t{font-weight:600;font-size:0.93rem;margin-bottom:0.15rem}
 .card-d{font-size:0.82rem;color:#c4b5d4;font-weight:400}
-.areas{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
-.areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
-.area-card{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.8rem 1.5rem;text-align:center;transition:transform .2s,border-color .2s}
-.area-card:hover{transform:translateY(-3px);border-color:rgba(192,132,252,0.3)}
-.area-i{font-size:2rem;margin-bottom:0.8rem}
-.area-t{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.4rem}
-.area-d{color:#c4b5d4;font-size:0.82rem;font-weight:400}
-.ofertas{padding:6rem 6%}
-.sec-tag{font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#c084fc;margin-bottom:0.7rem}
-.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.8rem}
-.sec-sub{color:#c4b5d4;max-width:500px;margin-bottom:3rem;font-weight:400}
+.visao{padding:6rem 6%;background:#08000a;border-bottom:1px solid rgba(192,132,252,0.1)}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.tech-box{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:14px;padding:2rem}
+.tech-box h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem}
+.tech-box h3 em{font-style:normal;color:#c084fc}
+.tech-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.tech-list li{font-size:0.87rem;color:#c4b5d4;padding-left:1.2rem;position:relative}
+.tech-list li::before{content:'·';color:#c084fc;position:absolute;left:0;font-size:1.1rem;line-height:1.4}
+.solucoes{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
 .item{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.8rem;transition:transform .2s,border-color .2s}
 .item:hover{transform:translateY(-3px);border-color:rgba(192,132,252,0.25)}
 .item-i{font-size:1.8rem;margin-bottom:0.9rem}
 .item-t{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem}
 .item-d{color:#c4b5d4;font-size:0.87rem;line-height:1.6;font-weight:400}
-/* ── PORTFÓLIO ── */
-.portfolio{padding:6rem 6%;background:#08000a;border-top:1px solid rgba(192,132,252,0.1)}
+.diferencial{padding:6rem 6%;background:#08000a;border-bottom:1px solid rgba(192,132,252,0.1)}
+.dif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:3rem}
+.dif-item{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.6rem 1.4rem}
+.dif-i{font-size:1.6rem;margin-bottom:0.7rem}
+.dif-t{font-family:'Bricolage Grotesque',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.3rem}
+.dif-d{font-size:0.83rem;color:#c4b5d4;font-weight:400}
+.paraquem{padding:6rem 6%;background:#0b000e;border-bottom:1px solid rgba(192,132,252,0.1)}
+.paraquem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:3rem}
+.pq-card{background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px;padding:1.8rem 1.5rem;text-align:center;transition:transform .2s,border-color .2s}
+.pq-card:hover{transform:translateY(-3px);border-color:rgba(192,132,252,0.3)}
+.pq-i{font-size:2rem;margin-bottom:0.8rem}
+.pq-t{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.9rem}
+.formato{padding:6rem 6%;background:#08000a;border-bottom:1px solid rgba(192,132,252,0.1)}
+.formato-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.fmt-card{background:#130010;border:1px solid rgba(192,132,252,0.15);border-radius:14px;padding:2rem}
+.fmt-tag{display:inline-block;background:rgba(192,132,252,0.15);color:#c084fc;font-size:0.72rem;font-weight:700;letter-spacing:1px;padding:0.2rem 0.7rem;border-radius:100px;margin-bottom:1rem;text-transform:uppercase}
+.fmt-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:0.5rem}
+.fmt-card > p{font-size:0.85rem;color:#c4b5d4;margin-bottom:1rem;line-height:1.7}
+.fmt-list{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.fmt-list li{font-size:0.83rem;color:#c4b5d4;padding-left:1.2rem;position:relative}
+.fmt-list li::before{content:'✓';color:#c084fc;position:absolute;left:0;font-size:0.8rem}
+.fmt-plus{margin-top:2rem;padding:1.5rem 2rem;background:rgba(192,132,252,0.07);border:1px solid rgba(192,132,252,0.2);border-radius:10px;text-align:center}
+.fmt-plus p{font-size:0.88rem;color:#c4b5d4;margin-bottom:0.3rem}
+.fmt-plus strong{font-family:'Bricolage Grotesque',sans-serif;color:#c084fc;font-size:1rem}
+.portfolio{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1)}
 .portfolio-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1000px;margin-top:3rem}
 .portfolio-img-wrapper{position:relative}
 .portfolio-img-wrapper::before{content:'';position:absolute;inset:-1px;border-radius:14px;background:linear-gradient(135deg,rgba(192,132,252,0.4),transparent 60%);z-index:0}
@@ -69,9 +93,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .portfolio-texto p{color:#c4b5d4;font-weight:400;line-height:1.8;margin-bottom:0.8rem}
 .badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.2rem}
 .badge{background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.25);color:#c084fc;font-size:0.78rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px}
-@media(max-width:768px){.portfolio-inner{grid-template-columns:1fr;gap:2rem}}
-/* ── FIM PORTFÓLIO ── */
-.como{padding:6rem 6%;background:#0b000e;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
+.como{padding:6rem 6%;background:#08000a;border-top:1px solid rgba(192,132,252,0.1);border-bottom:1px solid rgba(192,132,252,0.1)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:850px;margin-top:3rem}
 .step{text-align:center;padding:2.5rem 1.5rem;background:#130010;border:1px solid rgba(192,132,252,0.12);border-radius:12px}
 .step-n{width:46px;height:46px;background:linear-gradient(135deg,#c084fc,#a855f7);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:#08000a;margin:0 auto 1.2rem;font-size:1rem}
@@ -91,9 +113,12 @@ footer a{color:#c4b5d4;text-decoration:none}
   .sobre{grid-template-columns:1fr;gap:3rem}
   .numeros{flex-direction:column}
   .num{border-right:none;border-bottom:1px solid rgba(192,132,252,0.15)}
+  .num:last-child{border-bottom:none}
   .cta-box{padding:2.5rem 1.5rem}
   .foto-wrapper{width:200px;height:200px}
   .foto-wrapper img{width:200px;height:200px}
+  .tech-grid{grid-template-columns:1fr}
+  .portfolio-inner{grid-template-columns:1fr;gap:2rem}
 }
 </style>
 </head>
@@ -107,7 +132,7 @@ footer a{color:#c4b5d4;text-decoration:none}
 <section class="hero">
   <div class="tag">✦ Sistemas personalizados para o seu negócio</div>
   <h1>O sistema ideal para <em>o seu negócio</em>, feito sob medida.</h1>
-  <p>Desenvolvo sistemas web personalizados com cadastro de clientes, agendamentos, relatórios e conformidade com a LGPD — para clínicas, salões, escritórios e muito mais.</p>
+  <p>Desenvolvo sistemas web completos com foco em organização, segurança e praticidade — para clínicas, salões, escritórios, escolas e muito mais.</p>
   <a href="https://mail.google.com/mail/?view=cm&to=draritajeronimo.tech@gmail.com" target="_blank" class="btn">📩 Entre em contato</a>
 </section>
 
@@ -138,8 +163,8 @@ footer a{color:#c4b5d4;text-decoration:none}
   </div>
   <div class="sobre-dir">
     <h2>Tecnologia séria,<br><span>atendimento humano.</span></h2>
-    <p>Sou Rita Jerônimo, Doutora em Ciência da Computação pela UFPE com experiência em modelagem computacional e desenvolvimento de sistemas.</p>
-    <p>Criei a SysRita para levar tecnologia de qualidade a negócios de todos os tamanhos — com segurança, conformidade legal e suporte real.</p>
+    <p>Sou Rita Jerônimo, Doutora em Ciência da Computação pelo CIn-UFPE com experiência em modelagem computacional e desenvolvimento de sistemas.</p>
+    <p>Criei o SysRita para levar tecnologia de qualidade a negócios de todos os tamanhos — com segurança, conformidade legal e suporte real.</p>
     <a href="https://mail.google.com/mail/?view=cm&to=draritajeronimo.tech@gmail.com" target="_blank" class="sobre-link">Vamos conversar sobre o seu projeto →</a>
     <div class="cards">
       <div class="card">
@@ -167,31 +192,184 @@ footer a{color:#c4b5d4;text-decoration:none}
   </div>
 </section>
 
-<section class="areas">
-  <div class="sec-tag">Segmentos</div>
-  <div class="sec-title">Para quem desenvolvo</div>
-  <div class="sec-sub">Atendo negócios de diferentes áreas com soluções adaptadas a cada realidade.</div>
-  <div class="areas-grid">
-    <div class="area-card"><div class="area-i">🏥</div><div class="area-t">Clínicas em Geral</div><div class="area-d">Qualquer especialidade de saúde</div></div>
-    <div class="area-card"><div class="area-i">✂️</div><div class="area-t">Salões de Beleza</div><div class="area-d">Beleza, estética e barbearias</div></div>
-    <div class="area-card"><div class="area-i">⚖️</div><div class="area-t">Escritórios</div><div class="area-d">Advocacia, contabilidade e consultorias</div></div>
-    <div class="area-card"><div class="area-i">🏋️</div><div class="area-t">Academias</div><div class="area-d">Academias e espaços esportivos</div></div>
-    <div class="area-card"><div class="area-i">🛍️</div><div class="area-t">Comércio</div><div class="area-d">Pequenos e médios negócios</div></div>
-    <div class="area-card"><div class="area-i">✨</div><div class="area-t">Outros Segmentos</div><div class="area-d">Não encontrou? Entre em contato!</div></div>
+<section class="visao">
+  <div class="sec-tag">Tecnologia</div>
+  <div class="sec-title">A base sólida do seu sistema</div>
+  <div class="sec-sub">Cada sistema é entregue completo: backend robusto e interface pensada para o dia a dia.</div>
+  <div class="tech-grid">
+    <div class="tech-box">
+      <h3>⚙️ Backend — <em>A base sólida</em></h3>
+      <ul class="tech-list">
+        <li>Banco de dados estruturado (SQLite) com backup automático</li>
+        <li>API REST completa e documentada</li>
+        <li>Autenticação segura com JWT</li>
+        <li>Controle de perfis: admin, profissional e visualizador</li>
+        <li>Conformidade total com a LGPD</li>
+        <li>Suporte a clientes estrangeiros</li>
+      </ul>
+    </div>
+    <div class="tech-box">
+      <h3>🖥️ Frontend — <em>Interface para você usar</em></h3>
+      <ul class="tech-list">
+        <li>Login com tema lilás/preto — identidade visual da sua marca</li>
+        <li>Dashboard com métricas e resumos do negócio</li>
+        <li>Lista de clientes com busca e paginação</li>
+        <li>Cadastro completo + consentimento LGPD</li>
+        <li>Histórico de atendimentos por cliente</li>
+        <li>Layout responsivo — funciona em qualquer dispositivo</li>
+        <li>Menu lateral organizado e intuitivo</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="ofertas">
+<section class="solucoes">
   <div class="sec-tag">Soluções</div>
-  <div class="sec-title">O que posso desenvolver para você</div>
-  <div class="sec-sub">Cada sistema é construído do zero, pensado para a realidade do seu negócio.</div>
+  <div class="sec-title">Soluções completas para gestão profissional</div>
+  <div class="sec-sub">Do cadastro ao financeiro — tudo em um sistema feito para o seu negócio.</div>
   <div class="grid">
-    <div class="item"><div class="item-i">👥</div><div class="item-t">Cadastro de Clientes</div><div class="item-d">Registre, organize e consulte informações dos seus clientes com segurança e agilidade.</div></div>
-    <div class="item"><div class="item-i">📅</div><div class="item-t">Agendamentos</div><div class="item-d">Gerencie sua agenda, evite conflitos de horários e mantenha tudo em um só lugar.</div></div>
-    <div class="item"><div class="item-i">📋</div><div class="item-t">Prontuários e Registros</div><div class="item-d">Histórico completo de atendimentos e fichas personalizadas para cada cliente.</div></div>
-    <div class="item"><div class="item-i">📊</div><div class="item-t">Relatórios e Controle</div><div class="item-d">Visualize o desempenho do seu negócio com relatórios claros e objetivos.</div></div>
-    <div class="item"><div class="item-i">💰</div><div class="item-t">Controle Financeiro</div><div class="item-d">Acompanhe pagamentos, mensalidades e receitas de forma simples e organizada.</div></div>
-    <div class="item" style="border-color:rgba(192,132,252,0.22)"><div class="item-i">✨</div><div class="item-t">Funcionalidade Personalizada</div><div class="item-d">Tem uma necessidade específica? Desenvolvemos exatamente o que o seu negócio precisa.</div></div>
+    <div class="item">
+      <div class="item-i">👥</div>
+      <div class="item-t">Gestão de Clientes</div>
+      <div class="item-d">Cadastro completo, histórico, busca rápida e consentimento LGPD integrado.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">📋</div>
+      <div class="item-t">Gestão de Atendimentos</div>
+      <div class="item-d">Registro de cada atendimento, evolução clínica e fichas personalizadas por segmento.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">📅</div>
+      <div class="item-t">Gestão de Agendamentos</div>
+      <div class="item-d">Agenda organizada, sem conflitos de horários e com visão diária e semanal.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">👩‍⚕️</div>
+      <div class="item-t">Gestão de Profissionais</div>
+      <div class="item-d">Cadastro de equipe, controle de perfis e acesso diferenciado por função.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">💰</div>
+      <div class="item-t">Gestão Financeira e Pagamentos</div>
+      <div class="item-d">Acompanhe receitas, mensalidades e pagamentos de forma simples e organizada.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">🦷</div>
+      <div class="item-t">Prontuários Médicos e Odontológicos</div>
+      <div class="item-d">Fichas clínicas, odontograma interativo e histórico completo de procedimentos.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">🎓</div>
+      <div class="item-t">Gestão Escolar</div>
+      <div class="item-d">Cadastro de alunos, professores e turmas. Controle de frequência e desempenho.</div>
+    </div>
+    <div class="item">
+      <div class="item-i">🔔</div>
+      <div class="item-t">Notificações e Lembretes Automáticos</div>
+      <div class="item-d">Lembretes de consultas, vencimentos e avisos enviados automaticamente.</div>
+    </div>
+    <div class="item" style="border-color:rgba(192,132,252,0.22)">
+      <div class="item-i">✨</div>
+      <div class="item-t">Funcionalidade Personalizada</div>
+      <div class="item-d">Não está na lista? A gente constrói juntos exatamente o que o seu negócio precisa.</div>
+    </div>
+  </div>
+</section>
+
+<section class="diferencial">
+  <div class="sec-tag">Diferencial</div>
+  <div class="sec-title">Feito sob medida para o seu negócio</div>
+  <div class="sec-sub">Não existe um sistema igual ao outro. Você participa de cada etapa e o resultado reflete exatamente o que você precisa.</div>
+  <div class="dif-grid">
+    <div class="dif-item">
+      <div class="dif-i">🎨</div>
+      <div class="dif-t">Design adaptado à sua identidade</div>
+      <div class="dif-d">Cores, logotipo e estilo que combinam com o seu negócio.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-i">🔐</div>
+      <div class="dif-t">Segurança e sigilo total</div>
+      <div class="dif-d">Seus dados e os de seus clientes protegidos com autenticação e criptografia.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-i">🌍</div>
+      <div class="dif-t">Acesso remoto</div>
+      <div class="dif-d">Funciona em qualquer lugar, do celular ao computador, sem instalar nada.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-i">🛠️</div>
+      <div class="dif-t">Suporte após entrega</div>
+      <div class="dif-d">Atendimento direto e acompanhamento real mesmo depois que o sistema estiver pronto.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-i">📈</div>
+      <div class="dif-t">Evolução contínua</div>
+      <div class="dif-d">O sistema cresce com o seu negócio. Novas funcionalidades conforme sua necessidade.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-i">🤝</div>
+      <div class="dif-t">Construção colaborativa</div>
+      <div class="dif-d">Se você precisa de algo que não está na lista, a gente constrói juntos.</div>
+    </div>
+  </div>
+</section>
+
+<section class="paraquem">
+  <div class="sec-tag">Para quem é?</div>
+  <div class="sec-title">Feito para quem trabalha com pessoas</div>
+  <div class="sec-sub">Se o seu negócio envolve organizar clientes, atendimentos ou equipes — o SysRita é para você.</div>
+  <div class="paraquem-grid">
+    <div class="pq-card"><div class="pq-i">🏥</div><div class="pq-t">Clínicas e Consultórios</div></div>
+    <div class="pq-card"><div class="pq-i">✂️</div><div class="pq-t">Salões e Estúdios</div></div>
+    <div class="pq-card"><div class="pq-i">⚖️</div><div class="pq-t">Escritórios e Assessorias</div></div>
+    <div class="pq-card"><div class="pq-i">🏋️</div><div class="pq-t">Academias e Pilates</div></div>
+    <div class="pq-card"><div class="pq-i">🎓</div><div class="pq-t">Escolas e Instituições</div></div>
+    <div class="pq-card"><div class="pq-i">✨</div><div class="pq-t">Qualquer negócio com pessoas</div></div>
+  </div>
+</section>
+
+<section class="formato">
+  <div class="sec-tag">Formato</div>
+  <div class="sec-title">Qual é o formato ideal para o seu negócio?</div>
+  <div class="sec-sub">Software, site ou app — ou tudo junto. Você escolhe o que faz mais sentido.</div>
+  <div class="formato-grid">
+    <div class="fmt-card">
+      <div class="fmt-tag">Software</div>
+      <h3>Sistema Web</h3>
+      <p>Sistema personalizado acessado pelo navegador. Gestão completa do seu negócio em um só lugar.</p>
+      <ul class="fmt-list">
+        <li>Gestão de clientes, atendimentos e equipe</li>
+        <li>Acesso seguro com login e perfis</li>
+        <li>Backup automático dos dados</li>
+        <li>Ideal para clínicas, salões, escritórios e escolas</li>
+      </ul>
+    </div>
+    <div class="fmt-card">
+      <div class="fmt-tag">Site</div>
+      <h3>Presença Digital</h3>
+      <p>Sua vitrine online profissional para atrair novos clientes e apresentar seus serviços.</p>
+      <ul class="fmt-list">
+        <li>Site institucional ou landing page</li>
+        <li>Apresentação clara dos seus serviços</li>
+        <li>Formulário de contato e agendamento</li>
+        <li>Design moderno e responsivo</li>
+      </ul>
+    </div>
+    <div class="fmt-card">
+      <div class="fmt-tag">App</div>
+      <h3>Aplicativo Mobile</h3>
+      <p>O seu negócio na palma da mão dos seus clientes. Experiência moderna e acessível.</p>
+      <ul class="fmt-list">
+        <li>Agendamentos e notificações automáticas</li>
+        <li>Histórico e comunicação com clientes</li>
+        <li>Layout responsivo e intuitivo</li>
+        <li>Acesso pelo celular em qualquer lugar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fmt-plus">
+    <p>Ou a combinação que fizer mais sentido para você:</p>
+    <strong>Sistema + Site + App — desenvolvidos do zero, sob medida. ✦</strong>
   </div>
 </section>
 
@@ -223,9 +401,21 @@ footer a{color:#c4b5d4;text-decoration:none}
   <div class="sec-title">Como funciona?</div>
   <div class="sec-sub">Simples, transparente e sem complicação.</div>
   <div class="steps">
-    <div class="step"><div class="step-n">1</div><h3>Entre em contato</h3><p>Envie um e-mail contando sobre seu negócio. Respondo em até 24h.</p></div>
-    <div class="step"><div class="step-n">2</div><h3>Receba uma proposta</h3><p>Envio uma proposta clara com escopo, prazo e investimento.</p></div>
-    <div class="step"><div class="step-n">3</div><h3>Seu sistema pronto</h3><p>Você recebe o sistema com treinamento e suporte na entrega.</p></div>
+    <div class="step">
+      <div class="step-n">1</div>
+      <h3>Entre em contato</h3>
+      <p>Envie um e-mail contando sobre seu negócio. Respondo em até 24h.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <h3>Receba uma proposta</h3>
+      <p>Envio uma proposta clara com escopo, prazo e investimento.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <h3>Seu sistema pronto</h3>
+      <p>Você recebe o sistema com treinamento e suporte na entrega.</p>
+    </div>
   </div>
 </section>
 
